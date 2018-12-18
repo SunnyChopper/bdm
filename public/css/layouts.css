@@ -1,0 +1,95 @@
+/* ------------------------ *\
+	Colors
+\* ------------------------ */
+
+.red {
+	color: red;
+}
+
+.black {
+	color: red;
+}
+
+.white {
+	color: white;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: green;
+}
+
+/* ------------------------ *\
+	Positioning
+\* ------------------------ */
+
+.center-button {
+	display: block;
+	width: fit-content;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.left-button {
+	display: block;
+	width: fit-content;
+	margin-right: auto;
+	margin-left: 0px;
+}
+
+.right-button {
+	display: block;
+	width: fit-content;
+	margin-right: 0px;
+	margin-left: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+@media only screen and (max-width: 575px) {
+	.mobile-center-button {
+		display: block;
+		width: fit-content;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.mobile-left-button {
+		display: block;
+		width: fit-content;
+		margin-right: auto;
+		margin-left: 0px;
+	}
+
+	.mobile-right-button {
+		display: block;
+		width: fit-content;
+		margin-right: 0px;
+		margin-left: auto;
+	}	
+
+	.mobile-text-center {
+		text-align: center;
+	}
+
+	.mobile-text-left {
+		text-align: left;
+	}
+
+	.mobile-text-right {
+		text-align: right;
+	}
+}

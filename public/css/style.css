@@ -55,7 +55,7 @@ h6 {
 p {
 	font-size: 14.1px;
 	color: #878787;
-	line-height: 2.2;
+	line-height: 1.75;
 	font-weight: 500;
 }
 
@@ -130,8 +130,8 @@ ol {
 }
 
 .spad {
-	padding-top: 115px;
-	padding-bottom: 115px;
+	padding-top: 64px;
+    padding-bottom: 64px;
 }
 
 .text-white h1,
@@ -621,6 +621,7 @@ ol {
 
 .signup-section .signup-bg {
 	position: absolute;
+	background-position: left;
 	width: 50%;
 	height: 100%;
 	right: 0;
@@ -846,7 +847,9 @@ ol {
 =======================*/
 
 .page-info-section {
-	height: 443px;
+	height: 250px;
+	display: flex;
+	margin: auto;
 }
 
 .site-breadcrumb {
@@ -1198,11 +1201,11 @@ ol {
 }
 
 .contact-info-area {
-	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 .contact-info-area .section-title {
-	margin-bottom: 80px;
+	margin-bottom: 0px;
 }
 
 .contact-info-area .phone-number {
@@ -1573,6 +1576,7 @@ ol {
 @media only screen and (max-width: 767px) {
 	.section-title {
 		padding: 0;
+		margin-bottom: 64px;
 	}
 	.section-title h2 {
 		font-size: 40px;
@@ -1713,7 +1717,7 @@ ol {
 
 @media only screen and (max-width: 479px) {
 	.section-title h2 {
-		font-size: 30px;
+		font-size: 34px;
 	}
 	.signup-form,
 	.contact-form {

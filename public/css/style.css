@@ -161,6 +161,109 @@ ol {
 
 /* buttons */
 
+.control {
+    display: block;
+    position: relative;
+    padding-left: 42px;
+    padding-top: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.control_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background: white;
+    border: 2px solid #d82a4e;
+}
+.control-radio .control_indicator {
+    border-radius: 5px;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: hsl(0, 0%, 95%);
+}
+
+.control input:checked ~ .control_indicator {
+    background: #d82a4e;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: #be2243;
+}
+.control input:disabled ~ .control_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-checkbox .control_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 12px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+    border-color: #7b7b7b;
+}
+
+.site-btn-small {
+	display: inline-block;
+    min-width: 6em;
+    text-align: center;
+    border: none;
+    padding: 5px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    background: #d82a4e;
+    border-radius: 5px;
+    text-shadow: 0px  -1px 0px rgba(0,0,0,.5);
+    text-shadow: x-offset y-offset blur color;
+    -webkit-box-shadow: 0px 4px 0px #b12841, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 4px 0px #b12841, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 4px 0px #b12841, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+}
+
+.site-btn-small:hover {
+	background-color: #b12841;
+	-webkit-box-shadow: 0px 4px 0px #8c2435, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 4px 0px #8c2435, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 4px 0px #8c2435, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+}
+
+.site-btn-small:active {
+	-webkit-box-shadow: 0px 2px 0px #b12841, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 2px 0px #b12841, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 2px 0px #b12841, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-webkit-transform: translate(0, 4px);
+	-moz-transform: translate(0, 4px);
+	transform: translate(0, 4px);
+}
+
 .site-btn {
 	display: inline-block;
 	min-width: 196px;

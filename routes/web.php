@@ -11,8 +11,12 @@
 |
 */
 
+// Public site
 Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
+
+// Admin site
+Route::get('/admin', 'AdminController@index');
 
 Auth::routes();
 

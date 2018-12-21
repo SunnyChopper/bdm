@@ -13,7 +13,7 @@
 
 .gray-box {
 	background-color: hsl(0, 0%, 97.5%);
-	padding: 16px;
+	padding: 32px;
 	border-radius: 8px;
 	border-bottom: 3px solid hsl(0, 0%, 80%);
 }

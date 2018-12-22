@@ -244,11 +244,12 @@ ol {
     -webkit-box-shadow: 0px 4px 0px #b12841, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	-moz-box-shadow: 0px 4px 0px #b12841, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	box-shadow: 0px 4px 0px #b12841, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    transition: 0.1s all;
-    -webkit-transition: 0.1s all;
+    transition: 0.25s all;
+    -webkit-transition: 0.25s all;
 }
 
 .site-btn-small:hover {
+	color: white;
 	background-color: #b12841;
 	-webkit-box-shadow: 0px 4px 0px #8c2435, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 	-moz-box-shadow: 0px 4px 0px #8c2435, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);

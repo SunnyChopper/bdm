@@ -26,6 +26,12 @@ class AdminController extends Controller
     	return view('admin.login')->with('page_header', $page_header);
     }
 
+    public function dashboard() {
+        $page_header = "Admin Dashboard";
+
+        return view('admin.dashboard')->with('page_header', $page_header);
+    }
+
 
     /* Private functions */
     private function login_admin() {

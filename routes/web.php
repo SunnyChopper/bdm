@@ -15,8 +15,12 @@
 Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 
+// Members site
+Route::get('/members/dashboard', 'MembersController@dashboard');
+
 // Admin site
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/dashboard', 'AdminController@dashboard');
 
 Auth::routes();
 

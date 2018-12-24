@@ -23,7 +23,13 @@
 						</ul>
 					</nav>
 				@elseif(session()->has('admin_login'))
-
+					<nav class="main-menu" style="margin-top: -4px;">
+						<ul>
+							<li><a href="/admin/dashboard">Dashboard</a></li>
+							<li><a href="/admin/posts/view">Blog Posts</a></li>
+							<li><a href="/admin/logout">Logout</a></li>
+						</ul>
+					</nav>
 				@else
 					<nav class="main-menu" style="margin-top: -4px;">
 						<ul>

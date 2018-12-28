@@ -46,4 +46,11 @@ class PagesController extends Controller
 
         return view('pages.view-post')->with('page_title', $page_title)->with('page_header', $page_header)->with('post', $post);
     }
+
+    public function courses() {
+        $page_title = "Courses";
+        $page_header = $page_title;
+
+        return view('pages.courses')->with('page_title', $page_title)->with('page_header', $page_header);
+    }
 }

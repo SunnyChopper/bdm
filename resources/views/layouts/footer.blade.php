@@ -4,13 +4,13 @@
 		<div class="footer-warp">
 			<div class="row">
 				<div class="widget-item">
-					<h4>Newsletter</h4>
+					{{-- <h4>Newsletter</h4>
 					<p>Get tips to become a technology entrepreneur.</p>
 					<form class="footer-newslatter">
 						<input type="email" placeholder="E-mail">
 						<button class="site-btn">Subscribe</button>
 						<p>*We don’t spam</p>
-					</form>
+					</form> --}}
 				</div>
 				<div class="widget-item">
 
@@ -31,7 +31,7 @@
 					<h4>Navigation</h4>
 					<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="/courses">Courses</a></li>
+						{{-- <li><a href="/courses">Courses</a></li> --}}
 						<li><a href="/contact">Contact</a></li>
 					</ul>
 				</div>

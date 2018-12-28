@@ -76,7 +76,7 @@
 	</section>
 	<!-- categories section end -->
 
-	<!-- signup section -->
+	{{-- <!-- signup section -->
 	<section class="signup-section spad">
 		<div class="signup-bg set-bg" data-setbg="https://assets.entrepreneur.com/content/3x2/2000/20150824161251-wordpress-blogging-writing-typing-macbook-laptop-computer-technology-business-working.jpeg"></div>
 		<div class="container-fluid">
@@ -121,7 +121,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- signup section end -->
+	<!-- signup section end --> --}}
 
-	@include('layouts.bottom-cta')
+	{{-- @include('layouts.bottom-cta') --}}
 @endsection

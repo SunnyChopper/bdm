@@ -4,8 +4,9 @@
 		<div class="hero-text text-white">
 			<h2>Become a Tech Entrepreneur</h2>
 			<p id="main-banner-subtitle">Stop developing apps and websites just to have no one use them. It's disappointing to see hard work go down the drain. Learn how to start an online app and website business and start making things that people want and, most importantly, will pay for. No coding knowledge required.</p>
+			<a href="/blog" class="site-btn center-button">Start Learning</a>
 		</div>
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col-lg-10 offset-lg-1" style="padding: 24px; background: black;">
 				<h3 class="text-center text-white mb-4">Sign up for our Free Intro Course</h3>
 				<form class="intro-newslatter">
@@ -27,7 +28,7 @@
 					</div>
 				</form>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 </section>
 <!-- Hero section end -->

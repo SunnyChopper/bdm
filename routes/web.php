@@ -16,6 +16,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/blog', 'PagesController@blog');
 Route::get('/post/{post_id}/{slug}', 'PagesController@view_post');
+Route::get('/courses', 'PagesController@courses');
 
 // Members site
 Route::get('/members/dashboard', 'MembersController@dashboard');

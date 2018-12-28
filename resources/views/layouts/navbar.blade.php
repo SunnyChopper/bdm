@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-3">
 				<div class="site-logo">
-					<img src="{{ URL::asset('img/logo.png') }}" alt="Digital Age CEO Logo" style="height: 50px;">
+					<a href="/"><img src="{{ URL::asset('img/logo.png') }}" alt="Digital Age CEO Logo" style="height: 50px;"></a>
 				</div>
 				<div class="nav-switch">
 					<i class="fa fa-bars"></i>

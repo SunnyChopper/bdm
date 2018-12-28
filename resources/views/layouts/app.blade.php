@@ -9,7 +9,7 @@
 
 	<!-- Meta tags -->
 	<meta charset="UTF-8">
-	<meta name="description" content="WebUni Education Template">
+	<meta name="description" content="Helping coders become successful entrepreneurs.">
 	<meta name="keywords" content="webuni, education, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 

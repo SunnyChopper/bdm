@@ -12,6 +12,7 @@
 	<meta name="description" content="Helping coders become successful entrepreneurs.">
 	<meta name="keywords" content="webuni, education, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="P6CmirJnZk_Qs5MUqM911hRnynQn-XF6d23WPD3MAC8" />
 
 	<!-- Favicon -->   
 	<link href="{{ URL::asset('img/favicon.png') }}" rel="shortcut icon"/>

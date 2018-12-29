@@ -14,6 +14,7 @@
 // Public site
 Route::get('/', 'PagesController@index');
 Route::get('/contact', 'PagesController@contact');
+Route::post('/contact/submit', 'PagesController@submit_contact');
 Route::get('/blog', 'PagesController@blog');
 Route::get('/post/{post_id}/{slug}', 'PagesController@view_post');
 Route::get('/courses', 'PagesController@courses');

@@ -28,6 +28,17 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}"/>
 	<link rel="stylesheet" href="{{ URL::asset('css/layouts.css') }}"/>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131372255-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-131372255-3');
+	</script>
+
+
 </head>
 <body>
 	<!-- Page Preloder -->

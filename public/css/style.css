@@ -950,9 +950,10 @@ ol {
 =======================*/
 
 .page-info-section {
-	height: 250px;
-	display: flex;
-	margin: auto;
+	padding-top: 128px;
+    display: flex;
+    margin: auto;
+    padding-bottom: 48px;
 }
 
 .site-breadcrumb {

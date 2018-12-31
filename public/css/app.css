@@ -44,7 +44,7 @@
     font-weight: 100;
 }
 
-#post-body > img {
+#post-body > p > img {
 	width: 80%;
     display: block;
     margin-left: auto;

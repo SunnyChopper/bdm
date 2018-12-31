@@ -13,7 +13,7 @@ class BlogPostsController extends Controller
     public function create(Request $data) {
     	$blog_post_helper = new BlogPostHelper();
     	$post_data = array(
-    		"author_id" => Auth::user()->id,
+    		"author_id" => Auth::user()->getId(),
     		"title" => $data->title,
     		"body" => $data->body,
     		"slug" => $data->slug,

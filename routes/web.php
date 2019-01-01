@@ -41,3 +41,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/testing-1', 'TestController@test_one');
 Route::get('/testing-2', 'TestController@test_two');
+
+// Premium Content functions
+Route::get('/members/premium/{content_id}', 'PremiumContentController@read');
+Route::get('/admin/premium/view', 'PremiumContentController@view_premium_content');
+Route::get('/admin/premium/edit/{post_id}', 'PremiumContentController@edit_premium_content');
+Route::get('/admin/premium/new', 'PremiumContentController@new_premium_content');
+Route::post('/admin/premium/create', 'PremiumContentController@create');
+Route::post('/admin/premium/update', 'PremiumContentController@update');
+Route::post('/admin/premium/delete', 'PremiumContentController@delete');

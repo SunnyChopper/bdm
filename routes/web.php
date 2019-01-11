@@ -23,6 +23,9 @@ Route::get('/courses', 'PagesController@courses');
 Route::get('/members/dashboard', 'MembersController@dashboard');
 Route::get('/members/tools', 'MembersController@tools');
 
+// Newsletter functions
+Route::post('/newsletter/submit', 'NewsletterController@subscribe_user');
+
 // Admin site
 Route::get('/admin', 'AdminController@index');
 Route::post('/admin/login', 'AdminController@authenticate_user');
@@ -34,7 +37,7 @@ Route::get('/admin/posts/edit/{post_id}', 'AdminController@edit_blog_post');
 // Blog post functions
 Route::post('/admin/posts/create', 'BlogPostsController@create');
 Route::post('/admin/posts/update', 'BlogPostsController@update');
-Route::post('/admin/posts/delete', 'BlogPostsController@delete');
+Route::post('/admin/posts/delete', 'BlogPostsController@delete');	
 
 Auth::routes();
 

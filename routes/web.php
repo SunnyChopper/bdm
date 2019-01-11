@@ -21,6 +21,7 @@ Route::get('/courses', 'PagesController@courses');
 
 // Members site
 Route::get('/members/dashboard', 'MembersController@dashboard');
+Route::get('/members/tools', 'MembersController@tools');
 
 // Admin site
 Route::get('/admin', 'AdminController@index');
@@ -37,11 +38,6 @@ Route::post('/admin/posts/delete', 'BlogPostsController@delete');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/testing-1', 'TestController@test_one');
-Route::get('/testing-2', 'TestController@test_two');
-
 // Premium Content functions
 Route::get('/members/premium/{content_id}', 'PremiumContentController@read');
 Route::get('/admin/premium/view', 'PremiumContentController@view_premium_content');
@@ -50,3 +46,9 @@ Route::get('/admin/premium/new', 'PremiumContentController@new_premium_content')
 Route::post('/admin/premium/create', 'PremiumContentController@create');
 Route::post('/admin/premium/update', 'PremiumContentController@update');
 Route::post('/admin/premium/delete', 'PremiumContentController@delete');
+
+// Developer self awareness tool functions
+Route::get('/members/dev-sa/start', 'DevSelfAwarenessController@index');
+Route::post('/members/dev-sa/results', 'DevSelfAwarenessController@results');
+Route::get('/members/dev-sa/past-results', 'DevSelfAwarenessController@get_past_results');
+Route::get('/members/dev-sa/resources/{main_category}/{secondary_category}', 'DevSelfAwarenessController@get_resources');

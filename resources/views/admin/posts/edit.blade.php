@@ -34,7 +34,13 @@
 					</div>
 
 					<div class="form-group">
-						<input type="submit" value="Update Post" class="btn btn-success">
+						@if($post->is_active == 1)
+							<input type="submit" name="submit" value="Create into Draft" class="btn btn-primary">
+							<input type="submit" name="submit" value="Update Post" class="btn btn-success">
+						@else
+							<input type="submit" name="submit" value="Update Draft" class="btn btn-primary">
+							<input type="submit" name="submit" value="Publish Post" class="btn btn-success">
+						@endif
 					</div>
 				</form>
 			</div>

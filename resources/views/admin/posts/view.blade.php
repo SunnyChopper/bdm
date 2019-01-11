@@ -19,6 +19,7 @@
 								<th>Featured Image</th>
 								<th>Created</th>
 								<th>Last Updated</th>
+								<th>Status</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -30,6 +31,13 @@
 									<td style="max-width: 200px; vertical-align: middle;"><img src="{{ $post->featured_image_url }}" class="regular-image"></td>
 									<td style="vertical-align: middle;">{{ $post->created_at->format('M jS, Y') }}</td>
 									<td style="vertical-align: middle;">{{ $post->updated_at->format('M jS, Y') }}</td>
+									<td style="vertical-align: middle;">
+										@if($post->is_active == 1)
+										Published
+										@elseif($post->is_active == 2)
+										Draft
+										@endif
+									</td>
 									<td style="vertical-align: middle;">
 										<a href="/admin/posts/edit/{{ $post->id }}" class="btn btn-info rounded small">Edit</a>
 										<button id="{{ $post->id}}" class="btn delete_post_button btn-danger rounded small">Delete</button>

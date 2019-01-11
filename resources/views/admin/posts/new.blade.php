@@ -34,7 +34,8 @@
 						</div>
 
 						<div class="form-group">
-							<input type="submit" value="Create Post" class="btn btn-success">
+							<input type="submit" name="submit" value="Create Draft" class="btn btn-primary">
+							<input type="submit" name="submit" value="Create Post" class="btn btn-success">
 						</div>
 					</form>
 				</div>

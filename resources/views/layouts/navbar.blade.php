@@ -34,8 +34,9 @@
 					<nav class="main-menu" style="margin-top: -4px;">
 						<ul>
 							<li><a href="/members/dashboard">Dashboard</a></li>
-							<li><a href="/members/community">Community</a></li>
-							<li><a href="/members/courses">Courses</a></li>
+							{{-- <li><a href="/members/community">Community</a></li> --}}
+							{{-- <li><a href="/members/courses">Courses</a></li> --}}
+							<li><a href="/members/tools">Tools</a></li>
 							<li><a href="/blog">Extra Resources</a></li>
 							<li><a href="/contact">Contact</a></li>
 							<li><a href="/members/logout">Logout</a></li>

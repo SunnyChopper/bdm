@@ -2,6 +2,7 @@
 
 @section('content')
 	@include('layouts.main-banner')
+	<link rel="stylesheet" href="{{ URL::asset('css/ouibounce.min.css') }}">
 
 	<!-- categories section -->
 	<section class="categories-section spad">
@@ -123,5 +124,47 @@
 	</section>
 	<!-- signup section end --> --}}
 
+	<div id="ouibounce-modal">
+	<div class="underlay"></div>
+	<div class="modal">
+	<div class="modal-title">
+	<h3> Modal Title </h3>
+	</div>
+	<div class="modal-body">
+
+	Modal Body 
+
+	</div>
+	<div class="modal-footer">
+
+	Modal Footer
+
+	</div>
+	</div>
+	</div>
+
 	{{-- @include('layouts.bottom-cta') --}}
+	<script src="{{ URL::asset('js/ouibounce.js') }}"></script>
+@endsection
+
+@section('page_js')
+	<script type="text/javascript">
+		var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
+  aggressive: true,
+  timer: 0,
+  callback: function() { console.log('ouibounce fired!'); }
+});
+
+$('body').on('click', function() {
+  $('#ouibounce-modal').hide();
+});
+
+$('#ouibounce-modal .modal-footer').on('click', function() {
+  $('#ouibounce-modal').hide();
+});
+
+$('#ouibounce-modal .modal').on('click', function(e) {
+  e.stopPropagation();
+});
+	</script>
 @endsection

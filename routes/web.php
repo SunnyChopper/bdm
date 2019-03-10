@@ -19,6 +19,7 @@ Route::get('/blog', 'PagesController@blog');
 Route::get('/post/{post_id}/{slug}', 'PagesController@view_post');
 Route::get('/courses', 'PagesController@courses');
 
+
 // Members site
 Route::get('/members/dashboard', 'MembersController@dashboard');
 Route::get('/members/tools', 'MembersController@tools');
@@ -39,8 +40,6 @@ Route::post('/admin/posts/create', 'BlogPostsController@create');
 Route::post('/admin/posts/update', 'BlogPostsController@update');
 Route::post('/admin/posts/delete', 'BlogPostsController@delete');	
 
-Auth::routes();
-
 // Premium Content functions
 Route::get('/members/premium/{content_id}', 'PremiumContentController@read');
 Route::get('/admin/premium/view', 'PremiumContentController@view_premium_content');
@@ -50,8 +49,18 @@ Route::post('/admin/premium/create', 'PremiumContentController@create');
 Route::post('/admin/premium/update', 'PremiumContentController@update');
 Route::post('/admin/premium/delete', 'PremiumContentController@delete');
 
+// Downloadable functions
+Route::get('/members/downloads', 'DownloadablesController@index');
+Route::get('/admin/downloads/view', 'DownloadablesController@view_all');
+Route::get('/admin/downloads/new', 'DownloadablesController@new');
+Route::post('/admin/downloads/create', 'DownloadablesController@create');
+Route::get('/admin/downloads/edit/{download_id}', 'DownloadablesController@edit');
+Route::post('/admin/downloads/update', 'DownloadablesController@update');
+Route::post('/admin/downloads/delete', 'DownloadablesController@delete');
+
 // Developer self awareness tool functions
 Route::get('/members/dev-sa/start', 'DevSelfAwarenessController@index');
-Route::post('/members/dev-sa/results', 'DevSelfAwarenessController@results');
+Route::get('/members/dev-sa/results', 'DevSelfAwarenessController@results');
 Route::get('/members/dev-sa/past-results', 'DevSelfAwarenessController@get_past_results');
-Route::get('/members/dev-sa/resources/{main_category}/{secondary_category}', 'DevSelfAwarenessController@get_resources');
+
+Auth::routes();

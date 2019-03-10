@@ -27,6 +27,7 @@
 						<ul>
 							<li><a href="/admin/dashboard">Dashboard</a></li>
 							<li><a href="/admin/posts/view">Blog Posts</a></li>
+							<li><a href="/admin/downloads/view">Downloadables</a></li>
 							<li><a href="/admin/logout">Logout</a></li>
 						</ul>
 					</nav>
@@ -37,7 +38,7 @@
 							{{-- <li><a href="/members/community">Community</a></li> --}}
 							{{-- <li><a href="/members/courses">Courses</a></li> --}}
 							<li><a href="/members/tools">Tools</a></li>
-							<li><a href="/blog">Extra Resources</a></li>
+							<li><a href="/members/downloads">Extra Resources</a></li>
 							<li><a href="/contact">Contact</a></li>
 							<li><a href="/members/logout">Logout</a></li>
 						</ul>

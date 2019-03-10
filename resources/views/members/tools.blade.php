@@ -18,7 +18,7 @@
 				<p class="mt-16 text-center"><big><b>Developer Self-Awareness Tool</b></big></p>
 				<hr />
 				<p class="text-center">It's important to play on your strengths. No one has ever created something great by playing on their weaknesses. This tool can help you figure out what type of coder you are so you can play on your strengths and maximize your chances of becoming a tech entrepreneur. With each result comes links to extremely helpful resources.</p>
-				<a href="/members/dev-sa/start" class="btn btn-primary center-button">Access Tool</a>
+				<a href="/members/dev-sa/start" class="btn btn-primary centered disabled" role="button" aria-disabled="true">Under Construction</a>
 			</div>
 		</div>
 	</div>

@@ -16,8 +16,7 @@ class DevSAResultsHelper {
 	/* Public functions */
 	public function create($data) {
 		$result = new DevSAResult;
-		$result->main_category = $data["main_category"];
-		$result->secondary_category = $data["secondary_category"];
+		$result->category = $data["category"];
 		$result->user_id = $data["user_id"];
 		$result->save();
 

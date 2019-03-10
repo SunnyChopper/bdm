@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\Custom\BlogPostHelper;
+use App\Custom\DownloadableHelper;
+
 use App\User;
 
 class MembersController extends Controller
@@ -18,7 +21,14 @@ class MembersController extends Controller
     	$user = Auth::user();
     	$page_header = "Dashboard";
     	$page_title = $page_header;
-    	return view('members.dashboard')->with('page_title', $page_title)->with('page_header', $page_header)->with('user', $user);
+
+        $post_helper = new BlogPostHelper();
+        $posts = $post_helper->get_all_with_pagination(5);
+
+        $downloads_helper = new DownloadableHelper();
+        $downloads = $downloads_helper->get_all();
+
+    	return view('members.dashboard')->with('page_title', $page_title)->with('page_header', $page_header)->with('user', $user)->with('posts', $posts)->with('downloads', $downloads);
     }
 
     public function update_profile(Request $data) {

@@ -47,14 +47,14 @@
 			<div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-32-mobile">
 				<h5 class="text-center mb-16">Quick Actions</h5>
 				<ul class="list-group">
-					<a href="" class="mb-8">
+					<a href="/admin/posts/new" class="mb-8">
 						<li class="list-group-item">
 							<h6 class="mb-0" style="display: inline-block;">Create New Blog Post</h6>
 							<img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png" style="width: 20px; margin: auto; margin-top: 2px; height: auto; display: inline-block; float: right;">
 						</li>
 					</a>
 
-					<a href="" class="mb-8">
+					<a href="/admin/downloads/new" class="mb-8">
 						<li class="list-group-item">
 							<h6 class="mb-0" style="display: inline-block;">Upload New Downloadable</h6>
 							<img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-right-01-512.png" style="width: 20px; margin: auto; margin-top: 2px; height: auto; display: inline-block; float: right;">

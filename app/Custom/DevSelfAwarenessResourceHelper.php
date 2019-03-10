@@ -16,8 +16,7 @@ class DevSelfAwarenessResourceHelper {
 	/* Public functions */
 	public function create($data) {
 		$resource = new DevSelfAwarenessResource;
-		$resource->main_category = $data["main_category"];
-		$resource->secondary_category = $data["secondary_category"];
+		$resource->category = $data["category"];
 		$resource->title = $data["title"];
 		$resource->description = $data["description"];
 		$resource->image_url = $data["image_url"];
@@ -37,8 +36,7 @@ class DevSelfAwarenessResourceHelper {
 
 	public function update($data) {
 		$resource = DevSelfAwarenessResource::find($data["resource_id"]);
-		$resource->main_category = $data["main_category"];
-		$resource->secondary_category = $data["secondary_category"];
+		$resource->category = $data["category"];
 		$resource->title = $data["title"];
 		$resource->description = $data["description"];
 		$resource->image_url = $data["image_url"];
@@ -64,7 +62,7 @@ class DevSelfAwarenessResourceHelper {
 		return DevSelfAwarenessResource::where('is_active', 1)->paginate($pagination);
 	}
 
-	public function get_all_with_categories($main_category, $secondary_category) {
-		return BlogPost::where('main_category', $main_category)->where('secondary_category', $secondary_category)->where('is_active', 1)->get();
+	public function get_all_with_category($category) {
+		return DevSelfAwarenessResource::where('category', $category)->where('is_active', 1)->get();
 	}
 }

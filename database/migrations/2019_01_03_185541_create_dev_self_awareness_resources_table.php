@@ -15,8 +15,7 @@ class CreateDevSelfAwarenessResourcesTable extends Migration
     {
         Schema::create('dev_self_awareness_resources', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('main_category', 128);
-            $table->string('secondary_category', 128);
+            $table->string('category', 128);
             $table->string('title', 128);
             $table->text('description');
             $table->string('link', 256);

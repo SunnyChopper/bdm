@@ -23,17 +23,35 @@
 				</div>
 				<div class="widget-item">
 					<h4>Free Resources</h4>
+					@if(Auth::guest())
 					<ul>
 						<li><a href="/blog">Free Knowledge</a></li>
 					</ul>
+					@else
+					<ul>
+						<li><a href="/blog">Free Knowledge</a></li>
+						<li><a href="/members/downloads">Downloadables</a></li>
+					</ul>
+					@endif
 				</div>
 				<div class="widget-item">
 					<h4>Navigation</h4>
-					<ul>
-						<li><a href="/">Home</a></li>
-						{{-- <li><a href="/courses">Courses</a></li> --}}
-						<li><a href="/contact">Contact</a></li>
-					</ul>
+					@if(Auth::guest())
+						<ul>
+							<li><a href="/">Home</a></li>
+							{{-- <li><a href="/courses">Courses</a></li> --}}
+							<li><a href="/contact">Contact</a></li>
+							<li><a href="/register">Register</a></li>
+							<li><a href="/login">Login</a></li>
+						</ul>
+					@else
+						<ul>
+							<li><a href="/">Home</a></li>
+							{{-- <li><a href="/courses">Courses</a></li> --}}
+							<li><a href="/contact">Contact</a></li>
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					@endif
 				</div>
 				
 			</div>

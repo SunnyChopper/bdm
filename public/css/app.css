@@ -6,6 +6,11 @@
 	float: right;
 }
 
+.list-group-item {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
 /* ------------------------ *\
 	Custom Text
 \* ------------------------ */
@@ -95,6 +100,12 @@
 	padding: 32px;
 	border-radius: 8px;
 	border-bottom: 3px solid hsl(0, 0%, 80%);
+}
+
+.black-box {
+	padding: 32px;
+	border-radius: 8px;
+	background-color: #0F0F0F;
 }
 
 /* ------------------------ *\

@@ -32,21 +32,59 @@ class DevSelfAwarenessController extends Controller
     	$page_title = "Quiz Results";
     	$page_header = $page_title;
 
-    	// TODO: Create algorithm to determine main category and secondary category
-    	$main_category = "Front-End Developer";
-    	$secondary_category = "UI Designer";
+    	// Determine category
+        $j = 1;
+        $results_array = array(
+            "Frontend Developer" => 0,
+            "Backend Developer" => 0,
+            "Data Architect" => 0,
+            "Network Engineer" => 0,
+            "Data Analytics" => 0
+        );
+        for($i = 1; $i <= 25; $i++) {
+            $question_number = "question_" . $i;
+            switch($j) {
+                case 1:
+                    $value = $data->$question_number;
+                    $results_array["Frontend Developer"] = $results_array["Frontend Developer"] + intval($value);
+                    $j++;
+                    break;
+                case 2:
+                    $value = $data->$question_number;
+                    $results_array["Backend Developer"] = $results_array["Backend Developer"] + intval($value);
+                    $j++;
+                    break;
+                case 3:
+                    $value = $data->$question_number;
+                    $results_array["Data Architect"] = $results_array["Data Architect"] + intval($value);
+                    $j++;
+                    break;
+                case 4:
+                    $value = $data->$question_number;
+                    $results_array["Network Engineer"] = $results_array["Network Engineer"] + intval($value);
+                    $j++;
+                    break;
+                case 5:
+                    $value = $data->$question_number;
+                    $results_array["Data Analytics"] = $results_array["Data Analytics"] + intval($value);
+                    $j = 0;
+                    break;
+            }
+        }
+        arsort($results_array);
+    	reset($results_array);
+        $category = key($results_array);
 
     	// Get the results
     	$resource_helper = new DevSelfAwarenessResourceHelper();
-    	$resources = $resource_helper->get_all_with_categories($main_category, $secondary_category);
+    	$resources = $resource_helper->get_all_with_category($category);
 
     	// Save results
     	$user_id = Auth::id();
     	$sa_results_helper = new DevSAResultsHelper();
     	$result_data = array(
     		"user_id" => $user_id,
-    		"main_category" => $main_category,
-    		"secondary_category" => $secondary_category
+    		"category" => $category
     	);
 
     	return view('members.dev-sa.results')->with('page_header', $page_header)->with('page_title', $page_title)->with('resources', $resources);
@@ -69,18 +107,18 @@ class DevSelfAwarenessController extends Controller
     	return view('members.dev-sa.past-results')->with('page_title', $page_title)->with('page_header', $page_header)->with('results', $results);
     }
 
-    public function get_resources($main_category, $secondary_category) {
+    public function get_resources($category) {
     	if ($this->redirect_guest() == 1) {
             return redirect(url('/login'));
         }
 
     	// Dynamic page elements
-    	$page_title = "Resources for " . $main_category;
+    	$page_title = "Resources for " . $category;
     	$page_header = $page_title;
 
     	// Get resources
     	$resource_helper = new DevSelfAwarenessResourceHelper();
-    	$resources = $resource_helper->get_all_with_categories($main_category, $secondary_category);
+    	$resources = $resource_helper->get_all_with_category($category);
 
     	return view('members.dev-sa.resources')->with('page_title', $page_title)->with('page_header', $page_header)->with('resources', $resources);
     }

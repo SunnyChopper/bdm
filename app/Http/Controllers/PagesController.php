@@ -70,4 +70,13 @@ class PagesController extends Controller
 
         return view('pages.courses')->with('page_title', $page_title)->with('page_header', $page_header);
     }
+
+    public function register() {
+        $page_title = "Register";
+        return view('auth.register')->with('page_title', $page_title);
+    }
+
+    public function login() {
+
+    }
 }

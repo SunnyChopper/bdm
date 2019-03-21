@@ -79,7 +79,7 @@
 						</div>
 
 						<div class="form-group">
-							<button type="submit" class="btn btn-success center-button">
+							<button type="submit" class="btn btn-success centered">
 								{{ __('Join for Free & Download') }}
 							</button>
 						</div>

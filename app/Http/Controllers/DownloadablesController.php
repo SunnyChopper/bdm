@@ -104,7 +104,7 @@ class DownloadablesController extends Controller
 		$download_id = $downloads_helper->create($download_data);
 
 		// Take back to dashboard
-		return view(url('/admin/downloads'));
+		return redirect(url('/admin/downloads'));
     }
 
     public function edit($download_id) {

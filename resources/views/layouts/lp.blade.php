@@ -38,8 +38,6 @@
 
 	</head>
 	<body>
-		<div class="centered-content">
-			@yield('content')
-		</div>
+		@yield('content')
 	</body>
 </html>

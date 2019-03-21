@@ -42,7 +42,7 @@ class DownloadablesController extends Controller
 
     public function show_landing_page($download_id) {
         $download_helper = new DownloadableHelper($download_id);
-        $download = $download_helper->get();
+        $download = $download_helper->read();
         $page_title = $download->title;
 
         return view('admin.downloadables.lp-template')->with('page_title', $page_title)->with('download', $download);
@@ -69,7 +69,7 @@ class DownloadablesController extends Controller
 
         // Redirect to download file
         $download_helper = new DownloadableHelper($data->download_id);
-        $download = $download_helper->get();
+        $download = $download_helper->read();
         return redirect(url($download->file_url));
     }
 

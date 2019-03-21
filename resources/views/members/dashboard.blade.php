@@ -20,7 +20,7 @@
 						<div class="card-overlay">
 							<div class="card-footer">
 								<h5>{{ $post->title }}</h5>
-								<a href="/posts/{{ $post->id }}/{{ $post->slug }}">Read More</a>
+								<a href="/post/{{ $post->id }}/{{ $post->slug }}">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 									
 									<p class="mb-2">{{ $download->description }}</p>
 									
-									<a href="{{ $download->file_url }}" class="site-btn-small">Download</a>
+									<a href="/downloads/download/{{ $download->id }}" class="site-btn-small">Download</a>
 								</div>
 							</div>
 						@endforeach

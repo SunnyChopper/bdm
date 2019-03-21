@@ -85,6 +85,19 @@ class DownloadablesController extends Controller
         return redirect(url($download->file_url));
     }
 
+    public function attempt_download($download_id) {
+        if (Auth::guest()) {
+            return redirect(url('/downloads/' . $download_id));
+        }
+
+        $download_helper = new DownloadableHelper($download_id);
+        $download = $download_helper->read();
+        $download->downloads = $download->downloads + 1;
+        $download->save();
+
+        return redirect(url($download->file_url));
+    }
+
     public function create(Request $data) {
     	// Upload file
     	$file = $data->file('upload_file');

@@ -61,6 +61,7 @@ Route::post('/admin/downloads/update', 'DownloadablesController@update');
 Route::post('/admin/downloads/delete', 'DownloadablesController@delete');
 Route::get('/downloads/{download_id}', 'DownloadablesController@show_landing_page');
 Route::post('/downloads/register', 'DownloadablesController@register_user');
+Route::get('/downloads/download/{download_id}', 'DownloadablesController@attempt_download');
 
 // Developer self awareness tool functions
 Route::get('/members/dev-sa/start', 'DevSelfAwarenessController@index');

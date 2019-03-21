@@ -52,11 +52,15 @@ class DownloadablesController extends Controller
 
     public function register_user(Request $data) {
         if (User::where('username', strtolower($data->username))->count() > 0) {
-            return redirect()->back()->with('error', 'Username already taken.');
+            return redirect()->back()->with('error_username', 'Username already taken.');
         }
 
         if (User::where('email', strtolower($data->email))->count() > 0) {
-            return redirect()->back()->with('error', 'Email already taken.');
+            return redirect()->back()->with('error_email', 'Email already taken.');
+        }
+
+        if (strcmp($data->password, $data->password_confirmation) != 0) {
+            return redirect()->back()->with('error_password', 'Passwords did not match.');
         }
 
         $user = new User;

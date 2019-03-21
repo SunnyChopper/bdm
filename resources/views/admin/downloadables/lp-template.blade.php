@@ -20,51 +20,40 @@
 						<div class="form-group row">
 							<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 								<label for="first_name">{{ __('First Name:') }}</label>
-								<input id="first_name" type="text" class="form-control {{ session()->has('error') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required autofocus>
-								@if (session()->has('error'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ session()->get('error') }}</strong>
-									</span>
-								@endif
+								<input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 								<label for="last_name">{{ __('Last Name:') }}</label>
-								<input id="last_name" type="text" class="form-control {{ session()->has('error') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required>
-
-								@if (session()->has('error'))
-									<span class="invalid-feedback" role="alert">
-										<strong>{{ session()->get('error') }}</strong>
-									</span>
-								@endif
+								<input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required>
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="username">{{ __('Username:') }}</label>
-							<input id="username" type="text" class="form-control {{ session()->has('error') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required>
+							<input id="username" type="text" class="form-control {{ session()->has('error_username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required>
 
-							@if (session()->has('error'))
+							@if (session()->has('error_username'))
 								<span class="invalid-feedback" role="alert">
-									<strong>{{ session()->get('error') }}</strong>
+									<strong>{{ session()->get('error_username') }}</strong>
 								</span>
 							@endif
 						</div>
 
 						<div class="form-group">
 							<label for="email">{{ __('E-Mail:') }}</label>
-                            <input id="email" type="email" class="form-control {{ session()->has('error') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                            <input id="email" type="email" class="form-control {{ session()->has('error_email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
-                            @if (session()->has('error'))
+                            @if (session()->has('error_email'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ session()->get('error') }}</strong>
+                                    <strong>{{ session()->get('error_email') }}</strong>
                                 </span>
                             @endif
 						</div>
 
 						<div class="form-group">
 							<label for="password">{{ __('Password:') }}</label>
-							<input id="password" type="password" class="form-control {{ session()->has('error') ? ' is-invalid' : '' }}" name="password" required>
+							<input id="password" type="password" class="form-control {{ session()->has('error_password') ? ' is-invalid' : '' }}" name="password" required>
 
 							@if (session()->has('error'))
 								<span class="invalid-feedback" role="alert">

@@ -23,6 +23,8 @@ Route::get('/courses', 'PagesController@courses');
 // Members site
 Route::get('/members/dashboard', 'MembersController@dashboard');
 Route::get('/members/tools', 'MembersController@tools');
+Route::get('/members/logout', 'MembersController@logout');
+Route::post('/login/attempt', 'MembersController@attempt_login');
 
 // Newsletter functions
 Route::post('/newsletter/submit', 'NewsletterController@subscribe_user');

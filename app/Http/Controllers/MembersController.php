@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use Auth;
 
@@ -86,6 +87,30 @@ class MembersController extends Controller
         $page_title = $page_header;
 
         return view('members.tools')->with('page_title', $page_title)->with('page_header', $page_header);       
+    }
+
+    public function attempt_login(Request $data) {
+        if (User::where('username', strtolower($data->username))->count() > 0) {
+            $user = User::where('username', strtolower($data->username))->first();
+            if (Hash::check($data->password, $user->password)) {
+                if ($data->has('remember')) {
+                    Auth::loginUsingId($user->id, true);
+                } else {
+                    Auth::loginUsingId($user->id, false);
+                }
+
+                return redirect(url('/members/dashboard'));
+            } else {
+                return redirect()->back()->with('error', 'Incorrect password.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Username not found.');
+        }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect(url('/'));
     }
 
     /* Private functions */

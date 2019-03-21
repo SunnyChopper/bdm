@@ -7,31 +7,19 @@
         <div class="col-md-8">
             <div class="gray-box">
                  <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="/login/attempt">
                         @csrf
                         <div class="form-group row">
                             <div class="col-12">
                                 <label for="username">{{ __('Username') }}</label>
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
-
-                                @if ($errors->has('username'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-12">
                                 <label for="password">{{ __('Password') }}</label>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="password" type="password" class="form-control" name="password" required>
                             </div>
                         </div>
 
@@ -55,10 +43,14 @@
                                 <button type="submit" class="site-btn-small">
                                     {{ __('Login') }}
                                 </button>
-
-                                
                             </div>
                         </div>
+
+                        @if(session()->has('error'))
+                        <div class="form-group mt-32 mb-0">
+                            <p class="red mb-0">{{ session()->get('error') }}</p>
+                        </div>
+                        @endif
                     </form>
                 </div>
             </div>

@@ -57,12 +57,12 @@
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-16-mobile">
 									@if($download->file_type == 1)
-										<h6 class="mb-4">{{ $download->title }} <span class="badge badge-pill badge-primary ml-2">PDF</span></h6>
+										<h6 class="mb-2">{{ $download->title }} <span class="badge badge-pill badge-primary ml-2">PDF</span></h6>
 									@else
-										<h6 class="mb-4">{{ $download->title }}</h6>
+										<h6 class="mb-2">{{ $download->title }}</h6>
 									@endif
 									
-									<p class="mb-2">{{ $download->description }}</p>
+									<p class="mb-4">{{ $download->description }}</p>
 									
 									<a href="{{ $download->file_url }}" class="site-btn-small">Download</a>
 								</div>

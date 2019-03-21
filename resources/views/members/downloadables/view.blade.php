@@ -5,7 +5,7 @@
 
 	<div class="container mt-64 mb-64">
 		<div class="row justify-content-center">
-			<div class="col-lg-6 col-md-7 col-sm-9 col-12">
+			<div class="col-lg-7 col-md-7 col-sm-9 col-12">
 				<h3 class="text-center">Downloadables</h3>
 				<p class="text-center">Get access to valuable resources that you can use to further develop yourself.</p> 
 
@@ -13,13 +13,13 @@
 					<ul class="list-group">
 						@foreach($downloads as $download)
 							<li class="list-group-item">
-								<h4>
+								<h4 class="mb-2">
 									{{ $download->title }}
 									@if($download->file_type == 1)
 										<span class="badge badge-pill badge-primary">PDF</span>
 									@endif
 								</h4>
-								<p>{{ $download->description }}</p>
+								<p class="mb-2">{{ $download->description }}</p>
 								<a href="/downloads/download/{{ $download->id }}" class="site-btn-small">Download</a>
 								<hr />
 								<p class="mb-0"><small>Created on: {{ $download->created_at->format('M jS, Y') }} | Downloads: {{ $download->downloads }}</small>

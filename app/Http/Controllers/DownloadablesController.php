@@ -69,7 +69,7 @@ class DownloadablesController extends Controller
         $user->email = $data->email;
         $user->username = strtolower($data->username);
         $user->password = Hash::make($data->password);
-        $user->last_login_time = Carbon\Carbon::now();
+        $user->last_login_time = Carbon::now();
         $user->save();
 
         // Send welcome email to user

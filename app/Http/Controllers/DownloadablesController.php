@@ -67,6 +67,7 @@ class DownloadablesController extends Controller
         $user->first_name = $data->first_name;
         $user->last_name = $data->last_name;
         $user->email = $data->email;
+        $user->username = strtolower($data->username);
         $user->password = Hash::make($data->password);
         $user->save();
 

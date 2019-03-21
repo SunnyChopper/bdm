@@ -7,6 +7,7 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-7 col-md-8 col-sm-10 col-12">
 				<form id="new_downloadable_form" action="/admin/downloads/create" method="POST" enctype="multipart/form-data">
+					{{ csrf_field() }}
 					<div class="gray-box">
 						<div class="form-group">
 							<label>Title:</label>

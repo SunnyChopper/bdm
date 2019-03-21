@@ -11,6 +11,8 @@ use App\Mail\NewUser;
 use App\Custom\DownloadableHelper;
 use App\Custom\UploadHelper;
 
+use App\User;
+
 class DownloadablesController extends Controller
 {
     public function index() {

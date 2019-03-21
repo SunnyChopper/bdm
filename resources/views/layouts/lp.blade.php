@@ -37,7 +37,7 @@
 		</script>
 
 	</head>
-	<body>
+	<body class="mobile-pt-32 mobile-pb-32">
 		@yield('content')
 	</body>
 </html>

@@ -80,6 +80,8 @@ class DownloadablesController extends Controller
         // Redirect to download file
         $download_helper = new DownloadableHelper($data->download_id);
         $download = $download_helper->read();
+        $download->downloads = $download->downloads + 1;
+        $download->save();
         return redirect(url($download->file_url));
     }
 

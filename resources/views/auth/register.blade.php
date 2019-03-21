@@ -71,7 +71,7 @@
                             <div class="form-group row">
                                 <div class="col-12">
                                     <label for="last_name">{{ __('Last Name:') }}</label>
-                                    <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                                    <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required>
 
                                     @if ($errors->has('last_name'))
                                         <span class="invalid-feedback" role="alert">

@@ -38,7 +38,6 @@
 		gtag('config', 'UA-131372255-3');
 	</script>
 
-
 </head>
 <body>
 	<!-- Page Preloder -->

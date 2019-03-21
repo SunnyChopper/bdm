@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Hash;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\NewUser;
 
 use App\Custom\DownloadableHelper;
 use App\Custom\UploadHelper;
@@ -34,6 +38,39 @@ class DownloadablesController extends Controller
     	$page_header = $page_title;
 
     	return view('admin.downloadables.new')->with('page_title', $page_title)->with('page_header', $page_header);
+    }
+
+    public function show_landing_page($download_id) {
+        $download_helper = new DownloadableHelper($download_id);
+        $download = $download_helper->get();
+        $page_title = $download->title;
+
+        return view('admin.downloadables.lp-template')->with('page_title', $page_title)->with('download', $download);
+    }
+
+    public function register_user(Request $data) {
+        if (User::where('username', strtolower($data->username))->count() > 0) {
+            return redirect()->back()->with('error', 'Username already taken.');
+        }
+
+        if (User::where('email', strtolower($data->email))->count() > 0) {
+            return redirect()->back()->with('error', 'Email already taken.');
+        }
+
+        $user = new User;
+        $user->first_name = $data->first_name;
+        $user->last_name = $data->last_name;
+        $user->email = $data->email;
+        $user->password = Hash::make($data->password);
+        $user->save();
+
+        // Send welcome email to user
+        Mail::to($data->email)->send(new NewUser($data->first_name));
+
+        // Redirect to download file
+        $download_helper = new DownloadableHelper($data->download_id);
+        $download = $download_helper->get();
+        return redirect(url($download->file_url));
     }
 
     public function create(Request $data) {

@@ -62,7 +62,7 @@
 										<h6 class="mb-2">{{ $download->title }}</h6>
 									@endif
 									
-									<p class="mb-4">{{ $download->description }}</p>
+									<p class="mb-2">{{ $download->description }}</p>
 									
 									<a href="{{ $download->file_url }}" class="site-btn-small">Download</a>
 								</div>

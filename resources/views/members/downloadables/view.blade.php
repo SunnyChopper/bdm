@@ -13,12 +13,14 @@
 					<ul class="list-group">
 						@foreach($downloads as $download)
 							<li class="list-group-item">
-								@if($download->file_type == 1)
-									<span class="badge badge-pill badge-primary">PDF</span>
-								@endif
-								<h4>{{ $download->title }}</h4>
+								<h4>
+									{{ $download->title }}
+									@if($download->file_type == 1)
+										<span class="badge badge-pill badge-primary">PDF</span>
+									@endif
+								</h4>
 								<p>{{ $download->description }}</p>
-								<a href="{{ $download->file_url }}" class="site-btn-small">Download</a>
+								<a href="/downloads/download/{{ $download->id }}" class="site-btn-small">Download</a>
 								<hr />
 								<p class="mb-0"><small>Created on: {{ $download->created_at->format('M jS, Y') }} | Downloads: {{ $download->downloads }}</small>
 							</li>

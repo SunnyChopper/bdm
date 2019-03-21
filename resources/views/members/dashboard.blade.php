@@ -56,11 +56,11 @@
 						@foreach($downloads as $download)
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-16-mobile">
-									@if($download->file_type == 1)
-										<span class="badge badge-pill badge-primary">PDF</span>
-									@endif
 									<h6>{{ $download->title }}</h6>
 									<p class="mb-2">{{ $download->description }}</p>
+									@if($download->file_type == 1)
+										<span class="badge badge-pill badge-primary mt-8 mb-2">PDF</span>
+									@endif
 									<a href="{{ $download->file_url }}" class="site-btn-small">Download</a>
 								</div>
 							</div>

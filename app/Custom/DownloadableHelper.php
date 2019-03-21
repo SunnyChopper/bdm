@@ -65,7 +65,11 @@ class DownloadableHelper {
 	}
 
 	public static function get_next_id() {
-		$downloadable = Downloadable::orderBy('created_at', 'desc')->first();
-		return $downloadable->id + 1;
+		if (Downloadable::where('is_active', 1)->count() == 0) {
+			return 1;
+		} else {
+			$downloadable = Downloadable::orderBy('created_at', 'desc')->first();
+			return $downloadable->id + 1;
+		}
 	}
 }

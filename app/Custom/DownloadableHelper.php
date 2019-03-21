@@ -21,6 +21,7 @@ class DownloadableHelper {
 		$downloadable->file_type = $data["file_type"];
 		$downloadable->title = $data["title"];
 		$downloadable->description = $data["description"];
+		$downloadable->save();
 
 		// Return the ID of the downloadable
 		return $downloadable->id;

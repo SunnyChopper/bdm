@@ -67,6 +67,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Subscribe to general 
+        Newsletter::subscribe($data['email'], ['FNAME' => $data['first_name'], 'LNAME' => $data['last_name'], 'SOURCE' => 'Signup'], 'general');
+
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],

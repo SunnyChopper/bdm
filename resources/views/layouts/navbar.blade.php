@@ -29,6 +29,7 @@
 							<li><a href="/admin/dashboard">Dashboard</a></li>
 							<li><a href="/admin/posts/view">Blog Posts</a></li>
 							<li><a href="/admin/downloads/view">Downloadables</a></li>
+							<li><a href="/admin/public-courses/view">Public Courses</a></li>
 							<li><a href="/admin/logout">Logout</a></li>
 						</ul>
 					</nav>

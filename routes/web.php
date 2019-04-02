@@ -68,4 +68,20 @@ Route::get('/members/dev-sa/start', 'DevSelfAwarenessController@index');
 Route::get('/members/dev-sa/results', 'DevSelfAwarenessController@results');
 Route::get('/members/dev-sa/past-results', 'DevSelfAwarenessController@get_past_results');
 
+// Public courses functions
+Route::get('/admin/public-courses/view', 'PublicCoursesController@view_all');
+Route::get('/admin/public-courses/new', 'PublicCoursesController@new');
+Route::post('/admin/public-courses/create', 'PublicCoursesController@create');
+Route::get('/admin/public-courses/edit/{public_course_id}', 'PublicCoursesController@edit');
+Route::post('/admin/public-courses/update', 'PublicCoursesController@update');
+Route::get('/admin/public-courses/{public_course_id}/videos/view', 'PublicCourseVideosController@view_all');
+Route::get('/admin/public-courses/{public_course_id}/videos/new', 'PublicCourseVideosController@new');
+Route::post('/admin/public-courses/videos/create', 'PublicCourseVideosController@create');
+Route::get('/admin/public-courses/{public_course_id}/videos/edit/{video_id}', 'PublicCourseVideosController@edit');
+Route::post('/admin/public-courses/videos/update', 'PublicCourseVideosController@update');
+Route::get('/public-courses/{public_course_id}', 'PublicCoursesController@read');
+Route::get('/members/public-courses/enroll/{public_course_id}', 'PublicCourseEnrollmentsController@create');
+Route::get('/members/public-courses/view/{public_course_id}', 'PublicCoursesController@course_dashboard');
+Route::get('/members/public-courses/{public_course_id}/videos/watch/{video_id}', 'PublicCourseVideosController@watch');
+
 Auth::routes();

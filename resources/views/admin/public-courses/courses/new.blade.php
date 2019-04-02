@@ -18,7 +18,7 @@
 
 						<div class="form-group">
 							<label>Description<span class="red">*</span>:</label>
-							<textarea class="form-control" name="description" form="create_course_form" required></textarea>
+							<textarea class="form-control" name="description" form="create_course_form" rows="5" required></textarea>
 						</div>
 
 						<div class="form-group">
@@ -32,7 +32,7 @@
 						</div>
 
 						<div class="form-group">
-							<input type="submit" class="genric_btn primary centered">
+							<input type="submit" class="btn btn-primary centered" value="Create Public Course">
 						</div>
 					</div>
 				</form>

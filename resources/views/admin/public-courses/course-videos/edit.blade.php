@@ -8,6 +8,7 @@
 			<div class="col-lg-7 col-md-8 col-sm-10 col-12">
 				<form action="/admin/public-courses/videos/update" method="POST" id="edit_public_course_video_form">
 					{{ csrf_field() }}
+					<input type="hidden" name="video_id" value="{{ $video->id }}">
 					<div class="gray-box">
 						<h3 class="text-center">Edit Video Content</h3>
 						<p class="text-center">Fields with <span class="red">*</span> are required.</p>

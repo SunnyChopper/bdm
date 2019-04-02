@@ -2,7 +2,7 @@
 
 @section('content')
 	@include('layouts.banner')
-
+	@include('admin.public-courses.courses.modals.delete')
 	<div class="container pt-64 pb-64">
 		<div class="row justify-content-center">
 			@if(count($courses) > 0)
@@ -39,21 +39,23 @@
 								@endif
 
 								<td>
-									<a href="/admin/public-courses/{{ $course->id }}/videos/view" class="genric_btn primary">View Content</a>
-									<a href="/admin/public-courses/edit/{{ $course->id }}" class="genric_btn warning">Edit</a>
-									<button id="{{ $course->id }}" class="genric_btn danger delete_public_course_button">Delete</button>
+									<a href="/admin/public-courses/{{ $course->id }}/videos/view" class="btn btn-primary">View Content</a>
+									<a href="/admin/public-courses/edit/{{ $course->id }}" class="btn btn-warning">Edit</a>
+									<button id="{{ $course->id }}" class="btn btn-danger delete_public_course_button">Delete</button>
 								</td>
 							</tr>
 							@endforeach
 						</table>
 					</div>
+
+					<a href="/admin/public-courses/new" class="btn btn-primary centered mt-16">Create New Public Course</a>
 				</div>
 			@else
 				<div class="col-lg-7 col-md-8 col-sm-10 col-12">
 					<div class="gray-box">
 						<h3 class="text-center">No public courses available.</h3>
 						<p class="text-center">Click below to get started on creating the first public course.</p>
-						<a href="/admin/public-courses/new" class="genric_btn primary centered">Create Public Course</a>
+						<a href="/admin/public-courses/new" class="btn btn-primary centered">Create Public Course</a>
 					</div>
 				</div>
 			@endif

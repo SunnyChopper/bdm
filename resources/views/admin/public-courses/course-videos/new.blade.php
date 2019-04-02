@@ -8,6 +8,7 @@
 			<div class="col-lg-7 col-md-8 col-sm-10 col-12">
 				<form action="/admin/public-courses/videos/create" method="POST" id="create_public_course_video_form">
 					{{ csrf_field() }}
+					<input type="hidden" name="course_id" value="{{ $course->id }}">
 					<div class="gray-box">
 						<h3 class="text-center">Create New Video Content</h3>
 						<p class="text-center">Fields with <span class="red">*</span> are required.</p>
@@ -18,7 +19,7 @@
 
 						<div class="form-group">
 							<label>Description<span class="red">*</span>:</label>
-							<textarea class="form-control" form="create_public_course_video_form" name="description" required></textarea>
+							<textarea class="form-control" form="create_public_course_video_form" rows="5" name="description" required></textarea>
 						</div>
 
 						<div class="form-group">
@@ -37,7 +38,7 @@
 						</div>
 
 						<div class="form-group">
-							<input type="submit" class="genric_btn primary centered" value="Create Content">
+							<input type="submit" class="btn btn-primary centered" value="Create Content">
 						</div>
 					</div>
 				</form>

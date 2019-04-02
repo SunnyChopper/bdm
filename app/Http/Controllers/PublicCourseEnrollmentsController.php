@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\PublicCourseEnrollment;
 
 class PublicCourseEnrollmentsController extends Controller
 {
-    public function create(Request $data) {
+    public function create($public_course_id) {
     	$enrollment = new PublicCourseEnrollment;
-    	$enrollment->course_id = $data->course_id;
-    	$enrollment->user_id = $data->user_id;
+    	$enrollment->course_id = $public_course_id;
+    	$enrollment->user_id = Auth::id();
     	$enrollment->save();
 
-    	return redirect(url('/members/public-courses/view/' . $data->course_id));
+    	return redirect(url('/members/public-courses/view/' . $public_course_id));
     }
 
     public function delete(Request $data) {

@@ -15,6 +15,7 @@ class CreatePublicCourseVideosTable extends Migration
     {
         Schema::create('public_course_videos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('course_id');
             $table->string('title', 128);
             $table->text('description');
             $table->string('video_url', 128)->nullable();

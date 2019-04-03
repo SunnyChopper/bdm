@@ -82,6 +82,10 @@ Route::post('/admin/public-courses/videos/update', 'PublicCourseVideosController
 Route::get('/public-courses/{public_course_id}', 'PublicCoursesController@read');
 Route::get('/members/public-courses/enroll/{public_course_id}', 'PublicCourseEnrollmentsController@create');
 Route::get('/members/public-courses/view/{public_course_id}', 'PublicCoursesController@course_dashboard');
-Route::get('/members/public-courses/{public_course_id}/videos/watch/{video_id}', 'PublicCourseVideosController@watch');
+Route::get('/members/public-courses/{public_course_id}/videos/watch/{video_id}', 'PublicCourseVideosController@read');
+Route::get('/members/public-courses/{public_course_id}/forums/{forum_id}', 'PublicCourseForumsController@read');
+Route::get('/members/public-courses/{public_course_id}/new/forums/', 'PublicCourseForumsController@new');
+Route::post('/members/forums/create', 'PublicCourseForumsController@create');
+Route::get('/members/public-courses/{public_course_id}/forums', 'PublicCourseForumsController@view_all');
 
 Auth::routes();

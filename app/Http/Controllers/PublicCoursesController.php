@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\PublicCourseVideo;
 use App\PublicCourse;
+use App\PublicCourseForum;
+use App\PublicCourseEnrollment;
 
 class PublicCoursesController extends Controller
 {
@@ -34,13 +37,18 @@ class PublicCoursesController extends Controller
     }
 
     public function course_dashboard($public_course_id) {
+        if ($this->is_enrolled($public_course_id) == false) {
+            return redirect(url('/public-courses/' . $public_course_id));
+        }
+
         $course = PublicCourse::find($public_course_id);
-        $videos = PublicCourseVideo::where('course_id', $public_course_id)->get();
+        $videos = PublicCourseVideo::where('course_id', $public_course_id)->paginate(10);
+        $forums = PublicCourseForum::where('course_id', $public_course_id)->limit(5)->get();
 
         $page_title = $course->title;
         $page_header = $page_title;
 
-        return view('members.public-courses.dashboard')->with('course', $course)->with('videos', $videos)->with('page_title', $page_title)->with('page_header', $page_header);
+        return view('members.public-courses.dashboard')->with('course', $course)->with('videos', $videos)->with('page_title', $page_title)->with('page_header', $page_header)->with('forums', $forums);
     }
 
     public function view_all() {
@@ -94,5 +102,17 @@ class PublicCoursesController extends Controller
     	$public_course->save();
 
     	return redirect(url('/admin/public-courses/view'));
+    }
+
+    private function is_enrolled($course_id) {
+        if (Auth::guest()) {
+            return false;
+        } else {
+            if (PublicCourseEnrollment::where('user_id', Auth::id())->where('course_id', $course_id)->count() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 }

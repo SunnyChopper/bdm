@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\PublicCourseVideo;
+use App\PublicCourseComment;
+use App\PublicCourseForum;
 use App\PublicCourse;
 
 class PublicCourseVideosController extends Controller
@@ -32,7 +35,7 @@ class PublicCourseVideosController extends Controller
 
     	$video->save();
 
-    	return redirect()->back();
+    	return redirect(url('/admin/public-courses/' . $data->course_id . '/videos/view'));
     }
 
     public function view_all($public_course_id) {
@@ -47,11 +50,16 @@ class PublicCourseVideosController extends Controller
 
     public function read($video_id) {
     	$video = PublicCourseVideo::find($video_id);
+        $course = PublicCourse::find($video->course_id);
+        $comments = PublicCourseComment::where('video_id', $video_id)->orderBy('created_at', 'DESC')->limit(10)->get();
+        $forums = PublicCourseForum::where('course_id', $course->id)->limit(5)->get();
 
     	$page_title = $video->title;
     	$page_header = $page_title;
 
-    	return view('members.public-courses.view-video')->with('video', $video)->with('page_title', $page_title)->with('page_header', $page_header);
+        // TODO: Check if user has already commented on video
+
+    	return view('members.public-courses.view-video')->with('video', $video)->with('page_title', $page_title)->with('page_header', $page_header)->with('comments', $comments)->with('forums', $forums)->with('course', $course);
     }
 
     public function edit($public_course_id, $video_id) {

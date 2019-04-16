@@ -17,6 +17,7 @@
 						</li>
 						@endforeach
 					</ul>
+					{{ $videos->links() }}
 				@else
 					<h3 class="text-center">No videos available...</h3>
 				@endif
@@ -25,6 +26,18 @@
 			<div class="col-lg-5 col-md-5 col-sm-12 col-12">
 				<div class="gray-box">
 					<h4 class="text-center">Latest Forums</h4>
+					<hr />
+					@if(count($forums) == 0)
+						<p class="text-center">No forums created for this course...</p>
+						<a href="/members/public-courses/{{ $course->id }}/new/forums" class="btn btn-success centered">Create New Forum</a>
+					@else
+						@foreach($forums as $forum)
+							<h5>{{ $forum->title }}</h5>
+							<p>{{ substr($forum->description, 0, 128) }}...<a href="/members/public-courses/{{ $course->id }}/forums/{{ $forum->id }}">Read more</a></p>
+							<hr />
+						@endforeach
+						<a href="/members/public-courses/{{ $course->id }}/forums" class="btn btn-success centered">View All Forums</a>
+					@endif
 				</div>
 			</div>
 		</div>

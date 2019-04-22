@@ -32,8 +32,11 @@ return [
              * how to get this value:
              * http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id.
              */
-            'id' => 'a43e4e2be0',
+            'id' => 'a43e4e2be0'
         ],
+        'tech-101' => [
+            'id' => '1450a97d82'
+        ]
     ],
 
     /*

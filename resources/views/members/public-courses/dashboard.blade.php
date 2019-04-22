@@ -20,7 +20,7 @@
 				</ul>
 
 				@if(count($videos) == 5)
-				<a href="/members/public-courses/{{ $course->id }}/videos" class="btn btn-primary centered">View All Videos</a>
+				<a href="/members/public-courses/{{ $course->id }}/videos" class="btn btn-primary centered mt-16">View All Videos</a>
 				@endif
 			</div>
 

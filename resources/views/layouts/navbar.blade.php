@@ -18,6 +18,7 @@
 							<li><a href="/">Home</a></li>
 							{{-- <li><a href="/courses">Courses</a></li> --}}
 							<li><a href="/blog">Free Knowledge</a></li>
+							<li><a href="/public-courses">Public Courses</a></li>
 							<li><a href="/contact">Contact</a></li>
 							<li><a href="/login">Login</a></li>
 							<li><a href="/register">Register</a></li>
@@ -39,9 +40,10 @@
 							<li><a href="/members/dashboard">Dashboard</a></li>
 							{{-- <li><a href="/members/community">Community</a></li> --}}
 							{{-- <li><a href="/members/courses">Courses</a></li> --}}
+							<li><a href="/public-courses">Public Courses</a></li>
 							<li><a href="/members/tools">Tools</a></li>
 							<li><a href="/members/downloads">Extra Resources</a></li>
-							<li><a href="/contact">Contact</a></li>
+							<li><a href="/profile/{{ Auth::id() }}">Profile</a></li>
 							<li><a href="/members/logout">Logout</a></li>
 						</ul>
 					</nav>

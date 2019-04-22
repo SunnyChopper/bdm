@@ -8,6 +8,9 @@ use App\Custom\BlogPostHelper;
 
 use Mail;
 
+use App\User;
+use App\PublicCourseEnrollment;
+
 class PagesController extends Controller
 {
     public function index() {
@@ -76,7 +79,18 @@ class PagesController extends Controller
         return view('auth.register')->with('page_title', $page_title);
     }
 
-    public function login() {
+    public function profile($user_id) {
+        // Get user
+        $user = User::find($user_id);
 
+        // Dynamic page features
+        $page_header = $user->first_name . " " . $user->last_name;
+        $page_title = $page_header;
+
+        // Get public course enrollments
+        $enrollments = PublicCourseEnrollment::where('user_id', $user_id)->get();
+
+        // Return view
+        return view('pages.profile')->with('page_title', $page_title)->with('page_header', $page_header)->with('user', $user)->with('enrollments', $enrollments);
     }
 }

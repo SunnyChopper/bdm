@@ -5,38 +5,46 @@
 
 	<div class="container pt-64 pb-64">
 		<div class="row">
-			<div class="col-lg-7 col-md-7 col-sm-12 col-12">
-				@if(count($videos) > 0)
-					<ul class="list-group">
-						@foreach($videos as $video)
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h4>Latest Videos</h4>
+				<hr />
+				<ul class="list-group">
+					@foreach($videos as $video)
+					<a href="/members/public-courses/video/{{ $video->id }}">
 						<li class="list-group-item">
-							<h4>{{ $video->title }}</h4>
-							<hr />
-							<p>{{ $video->description }}</p>
-							<a href="/members/public-courses/{{ $course->id }}/videos/watch/{{ $video->id }}">Watch video...</a>
+							<h5>{{ $video->title }}</h5>
+							<p class="mb-0">{{ substr($video->description, 0, 120) }}</p>
 						</li>
-						@endforeach
-					</ul>
-					{{ $videos->links() }}
-				@else
-					<h3 class="text-center">No videos available...</h3>
+					</a>
+					@endforeach
+				</ul>
+
+				@if(count($videos) == 5)
+				<a href="/members/public-courses/{{ $course->id }}/videos" class="btn btn-primary centered">View All Videos</a>
 				@endif
 			</div>
 
-			<div class="col-lg-5 col-md-5 col-sm-12 col-12">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<div class="gray-box">
-					<h4 class="text-center">Latest Forums</h4>
-					<hr />
-					@if(count($forums) == 0)
-						<p class="text-center">No forums created for this course...</p>
-						<a href="/members/public-courses/{{ $course->id }}/new/forums" class="btn btn-success centered">Create New Forum</a>
-					@else
+					<h4>Latest Forums</h4>
+					@if(count($forums) > 0)
+					<p><a href="/members/public-courses/{{ $course->id }}/forums/new" class="btn btn-primary">Create Forum</a></p>
+					@endif
+
+					@if(count($forums) > 0)
+					<ul class="list-group">
 						@foreach($forums as $forum)
-							<h5>{{ $forum->title }}</h5>
-							<p>{{ substr($forum->description, 0, 128) }}...<a href="/members/public-courses/{{ $course->id }}/forums/{{ $forum->id }}">Read more</a></p>
-							<hr />
+						<li class="list-group-item">
+							<h6>{{ $forum->title }}</h6>
+							<p class="mb-2">{{ substr($forum->description, 0, 120) }}</p>
+							<a href="/members/public-courses/{{ $course->id }}/forums/{{ $forum->id }}">View Forum</a>
+						</li>
 						@endforeach
-						<a href="/members/public-courses/{{ $course->id }}/forums" class="btn btn-success centered">View All Forums</a>
+					</ul>
+
+					@else
+					<p>No forums created for this public course. Click below to create the first one.</p>
+					<a href="/members/public-courses/{{ $course->id }}/forums/new" class="btn btn-primary">Create Forum</a>
 					@endif
 				</div>
 			</div>

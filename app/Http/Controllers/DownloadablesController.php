@@ -13,6 +13,8 @@ use App\Custom\UploadHelper;
 
 use App\User;
 
+use Auth;
+
 use Carbon\Carbon;
 
 class DownloadablesController extends Controller

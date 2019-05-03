@@ -33,9 +33,6 @@ trait AuthenticatesUsers
             Session::save();
         }
 
-        // Check
-        return Session::get('login_redirect');
-
         $page_header = "Login";
         return view('auth.login')->with('page_header', $page_header);
     }

@@ -30,7 +30,7 @@
 					<p class="text-center">In order to enroll in this free public course, you must first register a new account. Click below to get started.</p>
 					<a href="/register?redirect_action=/public-courses/enroll/{{ $course->id }}" class="btn btn-success centered">Register and Enroll</a>
 					<p class="text-center mt-16">If you already have an account, hit the login button below!</p>
-					<a href="/login?redirect_action=/public-courses/{{ $course->id }}" class="btn btn-primary centered">Login and Enroll</a>
+					<a href="/login?redirect_action=/members/public-courses/view/{{ $course->id }}" class="btn btn-primary centered">Login and Enroll</a>
 					@elseif(\App\Custom\PublicCourseHelper::isUserEnrolledInCourse($course->id, Auth::id()))
 					<p>You are already enrolled in this course. Click below to view the course dashboard.</p>
 					<a href="/members/public-courses/view/{{ $course->id }}" class="btn btn-primary centered">Go to Dashboard</a>

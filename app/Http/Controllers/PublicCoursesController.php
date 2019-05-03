@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Custom\UsersHelper;
 use App\PublicCourseVideo;
@@ -41,6 +42,10 @@ class PublicCoursesController extends Controller
     }
 
     public function course_dashboard($public_course_id) {
+        if (Auth::guest()) {
+            return redirect(url('/login?redirect_action=/members/public-courses/view/'.$public_course_id));
+        }
+
         $course = PublicCourse::find($public_course_id);
         $videos = PublicCourseVideo::where('course_id', $public_course_id)->orderBy('created_at', 'DESC')->limit(5)->get();
         $forums = PublicCourseForum::where('course_id', $public_course_id)->orderBy('created_at', 'DESC')->limit(5)->get();

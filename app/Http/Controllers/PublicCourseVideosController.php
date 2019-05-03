@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Custom\UsersHelper;
 use App\PublicCourseComment;
@@ -56,6 +57,10 @@ class PublicCourseVideosController extends Controller
     }
 
     public function read($video_id) {
+        if (Auth::guest()) {
+            return redirect(url('/login?redirect_action=/members/public-courses/video/'.$video_id));
+        }
+
         $video = PublicCourseVideo::find($video_id);
         $comments = PublicCourseComment::where('video_id', $video_id)->get();
 

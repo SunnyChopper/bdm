@@ -7,8 +7,8 @@
         <div class="col-md-8">
             <div class="gray-box">
                  <div class="card-body">
-                    <form method="POST" action="/login/attempt">
-                        @csrf
+                    <form method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
                         <div class="form-group row">
                             <div class="col-12">
                                 <label for="username">{{ __('Username') }}</label>

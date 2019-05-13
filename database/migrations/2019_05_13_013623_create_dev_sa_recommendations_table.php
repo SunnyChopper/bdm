@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevSaResultsTable extends Migration
+class CreateDevSaRecommendationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateDevSaResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dev_sa_results', function (Blueprint $table) {
+        Schema::create('dev_sa_recommendations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('category', 128);
-            $table->integer('user_id');
+            $table->string('title', 128);
+            $table->text('description');
+            $table->integer('is_active')->default(1);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateDevSaResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dev_sa_results');
+        Schema::dropIfExists('dev_sa_recommendations');
     }
 }

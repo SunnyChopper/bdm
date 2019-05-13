@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevSelfAwarenessResourcesTable extends Migration
+class CreateMentorRecommendationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateDevSelfAwarenessResourcesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dev_self_awareness_resources', function (Blueprint $table) {
+        Schema::create('mentor_recommendations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('category', 128);
+            $table->integer('user_id');
             $table->string('title', 128);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('link', 256);
-            $table->string('image_url', 256);
+            $table->integer('type');
             $table->integer('is_active')->default(1);
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateDevSelfAwarenessResourcesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dev_self_awareness_resources');
+        Schema::dropIfExists('mentor_recommendations');
     }
 }

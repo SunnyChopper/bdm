@@ -15,7 +15,7 @@ class CreateMentorAppointmentsTable extends Migration
     {
         Schema::create('mentor_appointments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->date('appointment_date');
             $table->time('appointment_time');
             $table->string('timezone', 128);
